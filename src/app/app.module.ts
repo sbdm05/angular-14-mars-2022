@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Ui2Component } from './ui2/ui2.component';
 
 // décorateur
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Ui2Component
   ],
   imports: [
     BrowserModule,
@@ -18,7 +20,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    Ui2Component
+  ]
 })
 
 export class AppModule { }
