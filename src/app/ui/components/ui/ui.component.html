@@ -1,14 +1,18 @@
 <!-- header -->
 <!-- main / aside / content -->
 <header class="fixed-top">
-  Header
+  <!-- header -->
+  <!-- contenu projeté -->
+  <!-- transclusion -->
+  <ng-content select='.tr-header'></ng-content>
+
 </header>
 <main>
   <div class="shadow position-fixed">
   </div>
   <aside>
     <div class="scroller">
-      Nav
+      <ng-content select=".tr-nav"></ng-content>
     </div>
   </aside>
   <div class="page">
@@ -16,7 +20,8 @@
       Content
     </div>
     <footer>
-      Footer
+      <ng-content select='.tr-footer'></ng-content>
+
     </footer>
   </div>
 </main>

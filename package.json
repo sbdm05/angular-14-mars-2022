@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "compodoc": "npx compodoc -p tsconfig.doc.json -o -s",
+    "compodocOutput": "npx compodoc src -d --output compodoc",
     "jsonServer": "json-server --watch mock_db/db.json"
   },
   "private": true,
