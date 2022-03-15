@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UiComponent implements OnInit {
 
+  public open : boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  // créer une méthode pour alterner entre true/false
+  public toggle(): void {
+    this.open = !this.open
+    console.log(this.open);
   }
 
 }
