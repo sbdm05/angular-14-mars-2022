@@ -1,9 +1,11 @@
 <app-ui>
   <!-- si tu veux projeter dans le header utilise la classe tr-header -->
   <!-- ici on projete le bouton -->
-  <button class='tr-btn'>open/close</button>
+  <app-icon-nav class='tr-btn-open'></app-icon-nav>
+  <app-icon-close class='tr-btn-close'></app-icon-close>
   <app-header class='tr-header'></app-header>
   <app-nav class='tr-nav'></app-nav>
   <app-footer class='tr-footer'></app-footer>
+  <router-outlet class='tr-content'></router-outlet>
 </app-ui>
 

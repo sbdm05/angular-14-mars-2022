@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 // décorateur
 @NgModule({
   declarations: [
@@ -13,8 +14,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
+    AppRoutingModule,
     NgbModule
   ],
   providers: [],
