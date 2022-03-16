@@ -28,74 +28,98 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content module">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
+
+
+
+
+
 <ol class="breadcrumb">
-    <li>Modules</li>
-    <li >ClientsRoutingModule</li>
+  <li>Injectables</li>
+  <li >OrdersService</li>
 </ol>
 
-
 <ul class="nav nav-tabs" role="tablist">
-    <li  class="active" >
-        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-    </li>
-    <li >
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-    </li>
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
 </ul>
 
 <div class="tab-content">
     <div class="tab-pane fade active in" id="c-info">
-
         <p class="comment">
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/clients/clients-routing.module.ts</code>
+            <code>src/app/orders/services/orders.service.ts</code>
         </p>
 
 
 
 
 
-        <div class="container-fluid module">
-            <div class="row">
-            </div>
-        </div>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/orders/services/orders.service.ts:8</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
 
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
-import { PageAddClientComponent } from &#x27;./pages/page-add-client/page-add-client.component&#x27;;
-import { PageEditClientComponent } from &#x27;./pages/page-edit-client/page-edit-client.component&#x27;;
-import { PageListClientsComponent } from &#x27;./pages/page-list-clients/page-list-clients.component&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 
-const routes: Routes &#x3D; [
-  {path:&#x27;&#x27;, component: PageListClientsComponent},
-  {path:&#x27;add&#x27;, component: PageAddClientComponent},
-  {path:&#x27;edit&#x27;, component: PageEditClientComponent},
-];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+// décorateur qui rend cette classe utilisable en tant que service
+@Injectable({
+  providedIn: &#x27;root&#x27;
 })
-export class ClientsRoutingModule { }
+
+export class OrdersService {
+
+  
+  constructor() { }
+
+  // get list of orders
+
+  // post an order
+
+  // put an order
+
+  // getOrderById
+
+  // delete an order
+
+
+}
+
 </code></pre>
     </div>
+
 </div>
-
-
-
-
 
 
 
@@ -134,8 +158,8 @@ export class ClientsRoutingModule { }
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'ClientsRoutingModule.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'OrdersService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

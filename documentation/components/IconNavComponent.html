@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  PageNotFoundComponent</li>
+  IconNavComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/page-not-found/pages/page-not-found/page-not-found.component.ts</code>
+    <code>src/app/icons/icon-nav/icon-nav.component.ts</code>
 </p>
 
 
@@ -95,19 +95,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-page-not-found</code></td>
+                <td class="col-md-9"><code>app-icon-nav</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./page-not-found.component.scss</code></td>
+                <td class="col-md-9"><code>./icon-nav.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./page-not-found.component.html</code></td>
+                <td class="col-md-9"><code>./icon-nav.component.html</code></td>
             </tr>
 
 
@@ -125,6 +125,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#myIcon" >myIcon</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -160,7 +175,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/page-not-found/pages/page-not-found/page-not-found.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/icons/icon-nav/icon-nav.component.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -197,8 +212,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/page-not-found/pages/page-not-found/page-not-found.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/app/icons/icon-nav/icon-nav.component.ts:13</a></div>
                 </td>
             </tr>
 
@@ -215,20 +230,53 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="myIcon"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>myIcon</b></span>
+                        <a href="#myIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>faBars</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/icons/icon-nav/icon-nav.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { faBars} from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
 
 @Component({
-  selector: &#x27;app-page-not-found&#x27;,
-  templateUrl: &#x27;./page-not-found.component.html&#x27;,
-  styleUrls: [&#x27;./page-not-found.component.scss&#x27;]
+  selector: &#x27;app-icon-nav&#x27;,
+  templateUrl: &#x27;./icon-nav.component.html&#x27;,
+  styleUrls: [&#x27;./icon-nav.component.scss&#x27;]
 })
-export class PageNotFoundComponent implements OnInit {
-
+export class IconNavComponent implements OnInit {
+ public myIcon &#x3D; faBars
   constructor() { }
 
   ngOnInit(): void {
@@ -239,13 +287,13 @@ export class PageNotFoundComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;page-not-found works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;fa-icon [icon]&#x3D;&quot;myIcon&quot;&gt;&lt;/fa-icon&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./page-not-found.component.scss</code>
+                    <code>./icon-nav.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
@@ -275,10 +323,10 @@ export class PageNotFoundComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>page-not-found works!</p></div>'
+        var COMPONENT_TEMPLATE = '<div><fa-icon [icon]="myIcon"></fa-icon></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IconCloseComponent', 'selector': 'app-icon-close'},{'name': 'IconDeleteComponent', 'selector': 'app-icon-delete'},{'name': 'IconEditComponent', 'selector': 'app-icon-edit'},{'name': 'IconNavComponent', 'selector': 'app-icon-nav'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'PageAddClientComponent', 'selector': 'app-page-add-client'},{'name': 'PageAddOrderComponent', 'selector': 'app-page-add-order'},{'name': 'PageEditClientComponent', 'selector': 'app-page-edit-client'},{'name': 'PageEditOrderComponent', 'selector': 'app-page-edit-order'},{'name': 'PageForgotPasswordComponent', 'selector': 'app-page-forgot-password'},{'name': 'PageListClientsComponent', 'selector': 'app-page-list-clients'},{'name': 'PageListOrdersComponent', 'selector': 'app-page-list-orders'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PageResetPasswordComponent', 'selector': 'app-page-reset-password'},{'name': 'PageSignInComponent', 'selector': 'app-page-sign-in'},{'name': 'PageSignUpComponent', 'selector': 'app-page-sign-up'},{'name': 'Ui2Component', 'selector': 'app-ui2'},{'name': 'UiComponent', 'selector': 'app-ui'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'PageNotFoundComponent'};
+    var ACTUAL_COMPONENT = {'name': 'IconNavComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -324,7 +372,7 @@ export class PageNotFoundComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'PageNotFoundComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'IconNavComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

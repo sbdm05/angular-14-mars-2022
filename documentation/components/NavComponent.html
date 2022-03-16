@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  PageNotFoundComponent</li>
+  NavComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/page-not-found/pages/page-not-found/page-not-found.component.ts</code>
+    <code>src/app/core/components/nav/nav.component.ts</code>
 </p>
 
 
@@ -95,19 +95,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-page-not-found</code></td>
+                <td class="col-md-9"><code>app-nav</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./page-not-found.component.scss</code></td>
+                <td class="col-md-9"><code>./nav.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./page-not-found.component.html</code></td>
+                <td class="col-md-9"><code>./nav.component.html</code></td>
             </tr>
 
 
@@ -160,7 +160,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/page-not-found/pages/page-not-found/page-not-found.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/core/components/nav/nav.component.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -198,7 +198,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/page-not-found/pages/page-not-found/page-not-found.component.ts:12</a></div>
+                            class="link-to-prism">src/app/core/components/nav/nav.component.ts:12</a></div>
                 </td>
             </tr>
 
@@ -223,11 +223,11 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;app-page-not-found&#x27;,
-  templateUrl: &#x27;./page-not-found.component.html&#x27;,
-  styleUrls: [&#x27;./page-not-found.component.scss&#x27;]
+  selector: &#x27;app-nav&#x27;,
+  templateUrl: &#x27;./nav.component.html&#x27;,
+  styleUrls: [&#x27;./nav.component.scss&#x27;]
 })
-export class PageNotFoundComponent implements OnInit {
+export class NavComponent implements OnInit {
 
   constructor() { }
 
@@ -239,15 +239,34 @@ export class PageNotFoundComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;page-not-found works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;ul class&#x3D;&quot;nav flex-column&quot;&gt;
+  &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+    &lt;a
+    class&#x3D;&quot;nav-link&quot;
+    routerLink&#x3D;&quot;/orders&quot;
+    routerLinkActive&#x3D;&#x27;active&#x27;
+    &gt;Orders&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+    &lt;a
+    class&#x3D;&quot;nav-link&quot;
+    routerLink&#x3D;&quot;/clients&quot;
+    routerLinkActive&#x3D;&#x27;active&#x27;
+    &gt;Clients&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./page-not-found.component.scss</code>
+                    <code>./nav.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.active {
+  background: var(--app-light);
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -275,10 +294,10 @@ export class PageNotFoundComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>page-not-found works!</p></div>'
+        var COMPONENT_TEMPLATE = '<div><ul class="nav flex-column">  <li class="nav-item">    <a    class="nav-link"    routerLink="/orders"    routerLinkActive=\'active\'    >Orders</a>  </li>  <li class="nav-item">    <a    class="nav-link"    routerLink="/clients"    routerLinkActive=\'active\'    >Clients</a>  </li></ul></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IconCloseComponent', 'selector': 'app-icon-close'},{'name': 'IconDeleteComponent', 'selector': 'app-icon-delete'},{'name': 'IconEditComponent', 'selector': 'app-icon-edit'},{'name': 'IconNavComponent', 'selector': 'app-icon-nav'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'PageAddClientComponent', 'selector': 'app-page-add-client'},{'name': 'PageAddOrderComponent', 'selector': 'app-page-add-order'},{'name': 'PageEditClientComponent', 'selector': 'app-page-edit-client'},{'name': 'PageEditOrderComponent', 'selector': 'app-page-edit-order'},{'name': 'PageForgotPasswordComponent', 'selector': 'app-page-forgot-password'},{'name': 'PageListClientsComponent', 'selector': 'app-page-list-clients'},{'name': 'PageListOrdersComponent', 'selector': 'app-page-list-orders'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PageResetPasswordComponent', 'selector': 'app-page-reset-password'},{'name': 'PageSignInComponent', 'selector': 'app-page-sign-in'},{'name': 'PageSignUpComponent', 'selector': 'app-page-sign-up'},{'name': 'Ui2Component', 'selector': 'app-ui2'},{'name': 'UiComponent', 'selector': 'app-ui'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'PageNotFoundComponent'};
+    var ACTUAL_COMPONENT = {'name': 'NavComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -324,7 +343,7 @@ export class PageNotFoundComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'PageNotFoundComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'NavComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

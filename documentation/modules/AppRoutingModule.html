@@ -73,17 +73,39 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { RouterModule, Routes, Router, PreloadAllModules } from &#x27;@angular/router&#x27;;
 
+// définir des routes
 const routes: Routes &#x3D; [
-  
+  {path: &#x27;&#x27;, redirectTo:&#x27;/sign-in&#x27;, pathMatch:&quot;full&quot;},
+  {
+    path:&quot;orders&quot;,
+    loadChildren:() &#x3D;&gt;
+    &quot;import (&#x27;./orders/orders.module&#x27;).then((m)&#x3D;&gt; m.OrdersModule)&quot;
+  },
+  {
+    path: &#x27;clients&#x27;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./clients/clients.module&#x27;).then(m &#x3D;&gt; m.ClientsModule)&quot;
+  },
+  {
+    path:&quot;**&quot;,
+    loadChildren:() &#x3D;&gt;
+    &quot;import (&#x27;./page-not-found/page-not-found.module&#x27;).then((m)&#x3D;&gt; m.PageNotFoundModule)&quot;
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy : PreloadAllModules
+  })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  constructor(private data : Router){
+    console.log(data.config);
+  }
+
+}
 </code></pre>
     </div>
 </div>

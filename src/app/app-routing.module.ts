@@ -27,8 +27,8 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  constructor(private data : Router){
-    console.log(data.config);
+  constructor(private router : Router){
+    console.log(router.config);
   }
 
 }

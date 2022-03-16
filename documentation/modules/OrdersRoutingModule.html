@@ -74,14 +74,24 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { PageAddOrderComponent } from &#x27;./pages/page-add-order/page-add-order.component&#x27;;
+import { PageEditOrderComponent } from &#x27;./pages/page-edit-order/page-edit-order.component&#x27;;
+import { PageListOrdersComponent } from &#x27;./pages/page-list-orders/page-list-orders.component&#x27;;
 
-const routes: Routes &#x3D; [];
+const routes: Routes &#x3D; [
+  // ici les routes orders
+    {path:&#x27;&#x27;, component: PageListOrdersComponent},
+    {path:&#x27;add&#x27;, component: PageAddOrderComponent},
+    {path:&#x27;edit&#x27;, component: PageEditOrderComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class OrdersRoutingModule { }
+
+
 </code></pre>
     </div>
 </div>
