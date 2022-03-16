@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrdersService } from '../../services/orders.service';
 
 // décorateur
 @Component({
@@ -8,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageListOrdersComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private ordersService : OrdersService
+  ) {
+    // on veut subscribe à l'observable
+    this.ordersService.collection.subscribe((data)=> console.log(data))
+   }
 
   ngOnInit(): void {
   }
