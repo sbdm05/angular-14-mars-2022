@@ -1,4 +1,9 @@
-<app-template-full-width>
-  test
+<app-template-full-width [title]='title' *ngIf='collection'>
+  <!-- ici placer un tableau -->
+  <app-table-light [headers]='headers' [collection]='collection'></app-table-light>
+
+  <app-btn></app-btn>
 </app-template-full-width>
+
+
 
