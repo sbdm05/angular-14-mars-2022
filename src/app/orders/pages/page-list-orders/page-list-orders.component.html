@@ -1,16 +1,22 @@
 <app-template-full-width [title]='title' *ngIf='collection$ | async as collection'>
+  <!-- {{ collection | json }} -->
+
   <!-- ici placer un tableau -->
   <app-table-light [headers]='headers'>
         <!-- itérer dans collection -->
         <tr *ngFor="let item of collection">
-          <!-- 1 td par attribut -->
+
           <td>{{item.typePresta | uppercase }}</td>
           <td>{{item.client}}</td>
           <td>{{item.nbJours}}</td>
           <td>{{item.tjmHt}}</td>
-          <td>{{item | total }}</td>
-          <td>{{item| total : true}}</td>
-          <td>ETAT</td>
+          <td>{{item | total | currency}}</td>
+          <td>{{item| total : true | currency}}</td>
+          <td [appState]='item.state'>
+            <select (change)='changeState(item, $event)'>
+              <option *ngFor='let state of states' [value]='state' [selected]='state === item.state'>{{state}}</option>
+            </select>
+          </td>
         </tr>
 
   </app-table-light>

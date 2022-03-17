@@ -7,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TotalPipe implements PipeTransform {
 
   transform(val: any, tva?: boolean): number {
-    console.log('depuis transform');
+    //console.log('depuis transform');
     // return null;
 
   if(tva){

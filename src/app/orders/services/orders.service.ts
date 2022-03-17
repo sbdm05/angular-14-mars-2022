@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Order } from 'src/app/core/models/order';
 import { environment } from 'src/environments/environment';
+import { StateOrder } from 'src/app/core/enums/state-order';
 
 // décorateur qui rend cette classe utilisable en tant que service
 @Injectable({
@@ -39,6 +40,19 @@ export class OrdersService {
      this.collection$ = col
    }
 
+   public changeState(item: Order, state: StateOrder): Observable<Order>{
+    // créer un nouvel objet avec le nouveau state
+    const obj = new Order({...item})
+    obj.state = state;
+    return this.update(obj)
+   }
+
+   public update(item: Order): Observable<Order>{
+     // appel
+     return this.http.put<Order>(`${this.urlApi}/orders/${item.id}`, item)
+   }
+
+   
   // post an order
 
   // put an order
