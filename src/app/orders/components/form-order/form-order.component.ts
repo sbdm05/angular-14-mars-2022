@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
@@ -11,6 +11,8 @@ import { Order } from 'src/app/core/models/order';
 export class FormOrderComponent implements OnInit {
 
   @Input() public init!: Order
+  @Output() submitted = new EventEmitter();
+
   // 1 - Déclaration de la prop de type FormGroup
   public form!: FormGroup
 
@@ -44,6 +46,8 @@ export class FormOrderComponent implements OnInit {
   // afficher l'objet dans la console.
   onSubmit(){
     console.log(this.form.value)
+    // envoyer une valeur avec .emit
+    this.submitted.emit(this.form.value)
   }
 
 }

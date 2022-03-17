@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Order } from 'src/app/core/models/order';
 
 @Component({
@@ -10,9 +11,15 @@ export class PageAddOrderComponent implements OnInit {
 
   public item = new Order();
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  onAction(item: Order){
+    console.log('on Action déclenché', item);
+    // redirection
+    this.router.navigate(['orders'])
   }
 
 }
