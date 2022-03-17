@@ -1,4 +1,5 @@
 import { Component, OnInit, Type } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -12,7 +13,7 @@ export class PageListOrdersComponent implements OnInit {
 
   public title = "Titre depuis le Parent"
 
-  public collection!: Order[];
+  public collection$!: Observable<Order[]>;
   // En-têtes du tableau
   public headers = ['Type', 'Client', 'NbJours', 'Tjm HT', 'Total HT', 'Total TTC', 'State']
 
@@ -20,13 +21,19 @@ export class PageListOrdersComponent implements OnInit {
     private ordersService : OrdersService
   ) {
     // on veut subscribe à l'observable
-    this.ordersService.collection.subscribe((data)=> {
-      console.log(data)
-      this.collection = data
-    })
+    this.collection$ = this.ordersService.collection
    }
 
   ngOnInit(): void {
+  }
+
+  public total(val: number, coef: number, tva?: number): number{
+    console.log('test depuis total');
+
+    if(tva){
+      return val * coef * (1+ tva/100)
+    }
+    return val * coef;
   }
 
 }
