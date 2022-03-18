@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
 import { StateOrder } from 'src/app/core/enums/state-order';
+import { Router } from '@angular/router';
 
 // décorateur
 @Component({
@@ -19,10 +20,11 @@ export class PageListOrdersComponent implements OnInit {
 
   public collection$!: Observable<Order[]>;
   // En-têtes du tableau
-  public headers = ['Type', 'Client', 'NbJours', 'Tjm HT', 'Total HT', 'Total TTC', 'State']
+  public headers = ['Action', 'Type', 'Client', 'NbJours', 'Tjm HT', 'Total HT', 'Total TTC', 'State']
 
   constructor(
-    private ordersService : OrdersService
+    private ordersService : OrdersService,
+    private router : Router
   ) {
     // on veut subscribe à l'observable
     this.collection$ = this.ordersService.collection
@@ -54,5 +56,16 @@ export class PageListOrdersComponent implements OnInit {
       })
 
   }
+
+  public goToEdit(item: Order): void{
+    // redirect vers orders/edit/item.id
+    this.router.navigate(['orders', 'edit', item.id])
+  }
+
+  public deleteItem(item: Order): void{
+    // appel vers la méthode delete dans le service
+    this.ordersService.delete(item).subscribe()
+  }
+
 
 }

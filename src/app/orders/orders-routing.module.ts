@@ -8,7 +8,7 @@ const routes: Routes = [
   // ici les routes orders
     {path:'', component: PageListOrdersComponent},
     {path:'add', component: PageAddOrderComponent},
-    {path:'edit', component: PageEditOrderComponent},
+    {path:'edit/:id', component: PageEditOrderComponent},
 ];
 
 @NgModule({
